@@ -161,7 +161,7 @@ describe('controller', function () {
 	});
 
 	it('should highlight "Active" filter when switching to active view', function () {
-		// TODO: write 
+		// TODO: write test
 		var todos = [
 			{ id: 1, title: 'todo', completed: false },
 			{ id: 2, title: 'todo2', completed: false },
@@ -173,7 +173,6 @@ describe('controller', function () {
 		subject.setView('#/active');
 
 		expect(view.render).toHaveBeenCalledWith('showEntries', todos);
-		// expect(view.render).toHaveBeenCalledWith('setFilter', 'active');
 	});
 
 	describe('toggle all', function () {
@@ -194,11 +193,6 @@ describe('controller', function () {
 			todos.forEach(todo => {
 				expect(model.update).toHaveBeenCalledWith(todo.id, { completed: true }, jasmine.any(Function));
 			});
-
-			// expect(model.update).toHaveBeenCalledWith(1, { completed: true }, jasmine.any(Function));
-			// expect(model.update).toHaveBeenCalledWith(2, { completed: true }, jasmine.any(Function));
-			// expect(model.update).toHaveBeenCalledWith(3, { completed: true }, jasmine.any(Function));
-
 		});
 
 		it('should update the view', function () {
