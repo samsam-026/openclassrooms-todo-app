@@ -81,11 +81,19 @@
 		callback = callback || function () {};
 
 		// Generate an ID
-	    var newId = ""; 
-	    var charset = "0123456789";
+		var newId = "";
+		var charset = "0123456789";
 
-        for (var i = 0; i < 6; i++) {
-     		newId += charset.charAt(Math.floor(Math.random() * charset.length));
+		for (var i = 0; i < 6; i++) {
+			newId += charset.charAt(Math.floor(Math.random() * charset.length));
+		}
+
+		//BUG 2 - Duplicate IDs
+
+		while (todos.findIndex(todo => todo.id === parseInt(newId)) > -1) {
+			for (var i = 0; i < 6; i++) {
+				newId += charset.charAt(Math.floor(Math.random() * charset.length));
+			}
 		}
 
 		// If an ID was actually given, find the item and update each property
@@ -103,9 +111,8 @@
 			callback.call(this, todos);
 		} else {
 
-    		// Assign an ID
+			// Assign an ID
 			updateData.id = parseInt(newId);
-    
 
 			todos.push(updateData);
 			localStorage[this._dbName] = JSON.stringify(data);
@@ -123,7 +130,7 @@
 		var data = JSON.parse(localStorage[this._dbName]);
 		var todos = data.todos;
 		var todoId;
-		
+
 		for (var i = 0; i < todos.length; i++) {
 			if (todos[i].id == id) {
 				todoId = todos[i].id;
