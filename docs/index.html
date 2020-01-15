@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>todos Documentation</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>todos</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="#startedSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Getting Started</a>
+                    <ul class="collapse list-unstyled" id="startedSubmenu">
+                        <li>
+                            <a href="#prerequisite">Prerequisites</a>
+                        </li>
+                        <li>
+                            <a href="#install">Installation</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#testing">Testing</a>
+                </li>
+                <li>
+                    <a href="#mvcSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">MVC Architecture</a>
+                    <ul class="collapse list-unstyled" id="mvcSubmenu">
+                        <li>
+                            <a href="#mvcModel">What is MVC?</a>
+                        </li>
+                        <li>
+                            <a href="#model">Model</a>
+                        </li>
+                        <li>
+                            <a href="#view">View</a>
+                        </li>
+                        <li>
+                            <a href="#controller">Controller</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#troubleshoot">Troubleshooting</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <div id="gettingStarted">
+                <h1>Getting Started</h1>
+                <p>These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.</p>
+                <div class="inner-div" id="prerequisite">
+                    <h3>Prerequisites</h3>
+                    <p>You will need both <a href="https://nodejs.org/en/">Node.js</a> and <a href="https://git-scm.com/downloads">Git</a> to be installed on your machines before continuing.</p>
+                </div>
+                <div id="install">
+                    <h3>Installation</h3>
+                    <p>To install the project, go to the desired folder ane open the command line/terminal. Type the command;</p>
+                    <div class="code">
+                        <code>
+                            git clone https://github.com/samsam-026/openclassrooms-todo-app.git
+                        </code>
+                    </div>
+                    <p>Once cloned into the machine, go into the newly created folder <span class="code">openclassrooms-todo-app</span> and open the <span class="code">index.html</span> file to use the project.</p>
+                </div>
+            </div>
+            <div class="line"></div>
+
+            <div id="testing">
+                <h1>Testing</h1>
+                <p>To test the repo, first clone it as seen <a href="#install">above</a>, then move into the folder from the terminal;</p>
+                <div class="code">
+                    <code>
+                        cd openclassrooms-todo-app
+                    </code>
+                </div>
+                <p>Then install the testing dependencies using this command;</p>
+                <div class="code">
+                    <code>
+                        npm install
+                    </code>
+                </div>
+                <p>Upon successful installation, the tests can be run when the <span class="code">test/SpecRunner.html</span> file is opened.</p>
+            </div>
+            <div class="line"></div>
+
+            <div id="mvcModel">
+                <h1>MVC Architecture</h1>
+                <p>The architecture used in this project is MVC (Model-View-Controller) that separates an application into 3 main parts. Its is the most commonly used architecture for websites.</p>
+                <div class="inner-div" id="model">
+                    <h3>Model</h3>
+                    <p>The model is the data related logic of the application. In this application, the data objects are the todo objects and the list of todos. Below are the methods implemented for the model;</p>
+                    <div>
+                        <h5>create</h5>
+                        <p>Creates a new todo.</p>
+                    </div>
+                    <div>
+                        <h5>read</h5>
+                        <p>Return a list of todo according to the chosen filter (All/Active/Completed).</p>
+                    </div>
+                    <div>
+                        <h5>update</h5>
+                        <p>Update the details of a todo item (todo name/completed or not).</p>
+                    </div>
+                    <div>
+                        <h5>remove</h5>
+                        <p>Remove a specific todo using its unique ID.</p>
+                    </div>
+                    <div>
+                        <h5>removeAll</h5>
+                        <p>Delete all todos.</p>
+                    </div>
+                    <div>
+                        <h5>getCount</h5>
+                        <p>Get the number of todos according to chosen filter (All/Active/Completed).</p>
+                    </div>
+                </div>
+                <div class="inner-div" id="view">
+                    <h3>View</h3>
+                    <p>The view contains the UI of the application, which is what the is displayed to the user. In the case of this application, it is the <span class="code">index.html</span> page. Below are the methods implemented for the view;</p>
+                    <div>
+                        <h5>showEntries</h5>
+                        <p>Display all todos as a list on the webpage.</p>
+                    </div>
+                    <div>
+                        <h5>removeItem</h5>
+                        <p>Remove list item <span class="code">li</span> with the corresponding <span class="code">data-id</span> attribute.</p>
+                    </div>
+                    <div>
+                        <h5>updateElementCount</h5>
+                        <p>Update the counter that shows the number of active todo items on the webpage.</p>
+                    </div>
+                    <div>
+                        <h5>clearCompletedButton</h5>
+                        <p>Display the "Clear completed" button if there are completed todos.</p>
+                    </div>
+                    <div>
+                        <h5>contentBlockVisibility</h5>
+                        <p>Display the footer which contains all buttons and filters if there is more than one todo.</p>
+                    </div>
+                    <div>
+                        <h5>toggleAll</h5>
+                        <p>Display a more opaque icon on the "toggle all" button next to the text input, when clicked.</p>
+                    </div>
+                    <div>
+                        <h5>setFilter</h5>
+                        <p>Set the <span class="code">selected</span> class on the selected filter (All/Active/Completed).</p>
+                    </div>
+                    <div>
+                        <h5>clearNewTodo</h5>
+                        <p>Clear the value in the text input once a new todo is created.</p>
+                    </div>
+                    <div>
+                        <h5>elementCompleted</h5>
+                        <p>Toggle the class <span class="code">completed</span> on the todo list item to change its opacity. Additionally, toggle the checkmark of the checkbox input of the todo list item.</p>
+                    </div>
+                    <div>
+                        <h5>editItem</h5>
+                        <p>Display a text input on the todo list item <span class="code">li</span> when the item is double-clicked.</p>
+                    </div>
+                    <div>
+                        <h5>editItemDone</h5>
+                        <p>Hide the text input once the todo item has been edited and replace the old todo name with the newly entered one.</p>
+                    </div>
+                </div>
+                <div class="inner-div" id="controller">
+                    <h3>Controller</h3>
+                    <p>The controller of an application acts as an interface between the model and the view. It handles the requests made from the user in the view and manipulates the model accordingly. Below are the methods implemented for the controller;</p>
+
+                    <div>
+                        <h5>addItem</h5>
+                        <p>Triggered by the typing the enter key in the text input. <br>It calls the model method <span class="code">create</span> to create a new todo. <br>Once the todo is created, the view methods <span class="code">showEntries</span>, <span class="code">setFilter</span> and <span class="code">updateElementCount</span> are run.</p>
+                    </div>
+                    <div>
+                        <h5>editItem</h5>
+                        <p>Triggered when a todo pst item is clicked. <br>It calls the model method <span class="code">read</span> to find the current todo list item name. <br>The view method <span class="code">editItem</span> is run.</li>
+                    </div>
+                    <div>
+                        <h5>editItemSave</h5>
+                        <p>Triggered when the enter key is typed in a text input in a todo list item. <br>It calls the model method <span class="code">update</span> to replace the new name of the todo. <br>If an empty string is passed, the model method <span class="code">remove</span> is called instead. <br>Once the value is updated, the view methods <span class="code">editItemDone</span>, <span class="code">updateElementCount</span> and <span class="code">clearCompletedButton</span> is run.</p>
+                    </div>
+                    <div>
+                        <h5>editItemCancel</h5>
+                        <p>Triggered by clicking outside the text input in a todo list item after it is displayed. <br>It calls the model method <span class="code">read</span> to find the current todo list item name. <br>The view method <span class="code">editItemDone</span> is run.</p>
+                    </div>
+                    <div>
+                        <h5>removeItem</h5>
+                        <p>Triggered by clicking the cross icon on the right of a todo list item. <br>It calls the model method <span class="code">remove</span> on the clicked todo to delete it from the list. <br>Once it is deleted, the view methods <span class="code">updateElementCount</span> and <span class="code">removeItem</span> are run</p>
+                    </div>
+                    <div>
+                        <h5>toggleComplete</h5>
+                        <p>Triggered by clicking the checkbox on the left of a todo list item. <br>It calls the model method <span class="code">update</span> on the clicked todo to make it completed. <br>Once the todo is updated, the view methods <span class="code">updateElementCount</span>, <span class="code">clearCompletedButton</span> and <span class="code">elementCompleted</span> are run.</p>
+                    </div>
+                    <div>
+                        <h5>removeCompletedItems</h5>
+                        <p>Triggered by clicking the "Clear completed" button. <br>It calls the model method <span class="code">remove</span> on all todos which are completed. <br>Once the value is updated, the view method <span class="code">removeItem</span> is run for each completed todo.</p>
+                    </div>
+                    <div>
+                        <h5>toggleAll</h5>
+                        <p>Triggered when clicking the "toggle all" checkbox next to the text input. <br>It calls the model method <span class="code">update</span> on each todo to have the same completed state. <br>Once the value is updated, the view methods <span class="code">toggleAll</span>, <span class="code">clearCompletedButton</span> and <span class="code">elementCompleted</span> are run.</p>
+                    </div>
+                </div>
+                <p>The complete flow of the application is illustrated below;</p>
+                <img src="./images/data-flow.png" alt="Data Flow of the MVC Architecture" class="img-fluid" />
+            </div>
+            <div class="line"></div>
+
+            <div id="troubleshoot">
+                <h1>Troubleshooting</h1>
+            </div>
+            <div class="line"></div>
+
+
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+</body>
+
+</html>
