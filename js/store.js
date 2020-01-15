@@ -11,7 +11,7 @@
 	 * real life you probably would be making AJAX calls
 	 */
 	function Store(name, callback) {
-		callback = callback || function () {};
+		callback = callback || function () { };
 
 		this._dbName = name;
 
@@ -62,7 +62,7 @@
 	 * @param {function} callback The callback to fire upon retrieving data
 	 */
 	Store.prototype.findAll = function (callback) {
-		callback = callback || function () {};
+		callback = callback || function () { };
 		callback.call(this, JSON.parse(localStorage[this._dbName]).todos);
 	};
 
@@ -78,23 +78,19 @@
 		var data = JSON.parse(localStorage[this._dbName]);
 		var todos = data.todos;
 
-		callback = callback || function () {};
+		callback = callback || function () { };
 
 		// Generate an ID
 		var newId = "";
 		var charset = "0123456789";
 
-		for (var i = 0; i < 6; i++) {
-			newId += charset.charAt(Math.floor(Math.random() * charset.length));
-		}
-
 		//BUG 2 - Duplicate IDs
-
-		while (todos.findIndex(todo => todo.id === parseInt(newId)) > -1) {
+		// Keep generating a new ID until a unique one is created
+		do {
 			for (var i = 0; i < 6; i++) {
 				newId += charset.charAt(Math.floor(Math.random() * charset.length));
 			}
-		}
+		} while (todos.findIndex(todo => todo.id === parseInt(newId)) > -1)
 
 		// If an ID was actually given, find the item and update each property
 		if (id) {
@@ -153,7 +149,7 @@
 	 * @param {function} callback The callback to fire after dropping the data
 	 */
 	Store.prototype.drop = function (callback) {
-		var data = {todos: []};
+		var data = { todos: [] };
 		localStorage[this._dbName] = JSON.stringify(data);
 		callback.call(this, data.todos);
 	};
