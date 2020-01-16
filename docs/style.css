@@ -115,7 +115,7 @@ ul ul a {
 
 #topNav {
     display: none;
-    padding: 0 0 1em 0;
+    padding: 1em 0;
 }
 
 .btn-info {
@@ -227,5 +227,7 @@ span.code, #content a.code {
     }
     #topNav {
         display: block;
+        position: sticky;
+        top: 0;
     }
 }
