@@ -60,6 +60,35 @@
                         <li>
                             <a href="#controller">Controller</a>
                         </li>
+                        <li>
+                            <a href="#todoAppFlow">Todo Application Flow</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#usageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Usage</a>
+                    <ul class="collapse list-unstyled" id="usageSubmenu">
+                        <li>
+                            <a href="#createTodo">Creating a todo</a>
+                        </li>
+                        <li>
+                            <a href="#updateTodo">Updating a todo</a>
+                        </li>
+                        <li>
+                            <a href="#completeTodo">Completing a todo</a>
+                        </li>
+                        <li>
+                            <a href="#removeTodo">Removing a todo</a>
+                        </li>
+                        <li>
+                            <a href="#toggleAllTodo">Complete all todos</a>
+                        </li>
+                        <li>
+                            <a href="#clearCompletedTodo">Clear completed todos</a>
+                        </li>
+                        <li>
+                            <a href="#filterTodo">Filtering the todo list</a>
+                        </li>
                     </ul>
                 </li>
                 <li>
@@ -71,7 +100,13 @@
         <!-- Page Content  -->
         <div id="content">
 
-            <div id="gettingStarted">
+            <nav class="navbar navbar-light bg-light" id="topNav">
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    Menu
+                </button>
+            </nav>
+
+            <div class="outer-section" id="gettingStarted">
                 <h1>Getting Started</h1>
                 <p>These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.</p>
                 <div class="inner-div" id="prerequisite">
@@ -91,7 +126,7 @@
             </div>
             <div class="line"></div>
 
-            <div id="testing">
+            <div class="outer-section" id="testing">
                 <h1>Testing</h1>
                 <p>To test the repo, first clone it as seen <a href="#install">above</a>, then move into the folder from the terminal;</p>
                 <div class="code">
@@ -109,132 +144,277 @@
             </div>
             <div class="line"></div>
 
-            <div id="mvcModel">
+            <div class="outer-section" id="mvcModel">
                 <h1>MVC Architecture</h1>
                 <p>The architecture used in this project is MVC (Model-View-Controller) that separates an application into 3 main parts. Its is the most commonly used architecture for websites.</p>
                 <div class="inner-div" id="model">
                     <h3>Model</h3>
-                    <p>The model is the data related logic of the application. In this application, the data objects are the todo objects and the list of todos. Below are the methods implemented for the model;</p>
-                    <div class="method">
+                    <p>The model is the data related logic of the application. <br>In this application, the data objects are the todo objects and the list of todos. <br>Below are the methods implemented for the model;</p>
+                    <div class="method" id="create">
                         <h5>create</h5>
                         <p>Creates a new todo.</p>
                     </div>
-                    <div class="method">
+                    <div class="method" id="read">
                         <h5>read</h5>
                         <p>Return a list of todo according to the chosen filter (All/Active/Completed).</p>
                     </div>
-                    <div class="method">
+                    <div class="method" id="update">
                         <h5>update</h5>
                         <p>Update the details of a todo item (todo name/completed or not).</p>
                     </div>
-                    <div class="method">
+                    <div class="method" id="remove">
                         <h5>remove</h5>
                         <p>Remove a specific todo using its unique ID.</p>
                     </div>
-                    <div class="method">
+                    <div class="method" id="removeAll">
                         <h5>removeAll</h5>
                         <p>Delete all todos.</p>
                     </div>
-                    <div class="method">
+                    <div class="method" id="getCount">
                         <h5>getCount</h5>
                         <p>Get the number of todos according to chosen filter (All/Active/Completed).</p>
                     </div>
                 </div>
                 <div class="inner-div" id="view">
                     <h3>View</h3>
-                    <p>The view contains the UI of the application, which is what the is displayed to the user. In the case of this application, it is the <span class="code">index.html</span> page. Below are the methods implemented for the view;</p>
-                    <div class="method">
+                    <p>The view contains the UI of the application, which is what the is displayed to the user. <br>In the case of this application, it is the <span class="code">index.html</span> page. <br>Below are the methods implemented for the view;</p>
+                    <div class="method" id="showEntries">
                         <h5>showEntries</h5>
                         <p>Display all todos as a list on the webpage.</p>
                     </div>
-                    <div class="method">
+                    <div class="method" id="removeItemV">
                         <h5>removeItem</h5>
                         <p>Remove list item <span class="code">li</span> with the corresponding <span class="code">data-id</span> attribute.</p>
                     </div>
-                    <div class="method">
+                    <div class="method" id="updateElementCount">
                         <h5>updateElementCount</h5>
                         <p>Update the counter that shows the number of active todo items on the webpage.</p>
                     </div>
-                    <div class="method">
+                    <div class="method" id="clearCompletedButton">
                         <h5>clearCompletedButton</h5>
                         <p>Display the "Clear completed" button if there are completed todos.</p>
                     </div>
-                    <div class="method">
+                    <div class="method" id="contentBlockVisibility">
                         <h5>contentBlockVisibility</h5>
                         <p>Display the footer which contains all buttons and filters if there is more than one todo.</p>
                     </div>
-                    <div class="method">
+                    <div class="method" id="toggleAllV">
                         <h5>toggleAll</h5>
                         <p>Display a more opaque icon on the "toggle all" button next to the text input, when clicked.</p>
                     </div>
-                    <div class="method">
+                    <div class="method" id="setFilter">
                         <h5>setFilter</h5>
                         <p>Set the <span class="code">selected</span> class on the selected filter (All/Active/Completed).</p>
                     </div>
-                    <div class="method">
+                    <div class="method" id="clearNewTodo">
                         <h5>clearNewTodo</h5>
                         <p>Clear the value in the text input once a new todo is created.</p>
                     </div>
-                    <div class="method">
+                    <div class="method" id="elementCompleted">
                         <h5>elementCompleted</h5>
                         <p>Toggle the class <span class="code">completed</span> on the todo list item to change its opacity. Additionally, toggle the checkmark of the checkbox input of the todo list item.</p>
                     </div>
-                    <div class="method">
+                    <div class="method" id="editItemV">
                         <h5>editItem</h5>
                         <p>Display a text input on the todo list item <span class="code">li</span> when the item is double-clicked.</p>
                     </div>
-                    <div class="method">
+                    <div class="method" id="editItemDone">
                         <h5>editItemDone</h5>
                         <p>Hide the text input once the todo item has been edited and replace the old todo name with the newly entered one.</p>
                     </div>
                 </div>
                 <div class="inner-div" id="controller">
                     <h3>Controller</h3>
-                    <p>The controller of an application acts as an interface between the model and the view. It handles the requests made from the user in the view and manipulates the model accordingly. Below are the methods implemented for the controller;</p>
+                    <p>The controller of an application acts as an interface between the model and the view. <br>It handles the requests made from the user in the view and manipulates the model accordingly. <br>Below are the methods implemented for the controller;</p>
 
-                    <div class="method">
+                    <div class="method" id="addItem">
                         <h5>addItem</h5>
                         <p>Triggered by the typing the enter key in the text input. <br>It calls the model method <span class="code">create</span> to create a new todo. <br>Once the todo is created, the view methods <span class="code">showEntries</span>, <span class="code">setFilter</span> and <span class="code">updateElementCount</span> are run.</p>
                     </div>
-                    <div class="method">
+                    <div class="method" id="editItemC">
                         <h5>editItem</h5>
                         <p>Triggered when a todo pst item is clicked. <br>It calls the model method <span class="code">read</span> to find the current todo list item name. <br>The view method <span class="code">editItem</span> is run.</li>
                     </div>
-                    <div class="method">
+                    <div class="method" id="editItemSave">
                         <h5>editItemSave</h5>
                         <p>Triggered when the enter key is typed in a text input in a todo list item. <br>It calls the model method <span class="code">update</span> to replace the new name of the todo. <br>If an empty string is passed, the model method <span class="code">remove</span> is called instead. <br>Once the value is updated, the view methods <span class="code">editItemDone</span>, <span class="code">updateElementCount</span> and <span class="code">clearCompletedButton</span> is run.</p>
                     </div>
-                    <div class="method">
+                    <div class="method" id="editItemCancel">
                         <h5>editItemCancel</h5>
                         <p>Triggered by clicking outside the text input in a todo list item after it is displayed. <br>It calls the model method <span class="code">read</span> to find the current todo list item name. <br>The view method <span class="code">editItemDone</span> is run.</p>
                     </div>
-                    <div class="method">
+                    <div class="method" id="removeItemC">
                         <h5>removeItem</h5>
                         <p>Triggered by clicking the cross icon on the right of a todo list item. <br>It calls the model method <span class="code">remove</span> on the clicked todo to delete it from the list. <br>Once it is deleted, the view methods <span class="code">updateElementCount</span> and <span class="code">removeItem</span> are run</p>
                     </div>
-                    <div class="method">
+                    <div class="method" id="toggleComplete">
                         <h5>toggleComplete</h5>
                         <p>Triggered by clicking the checkbox on the left of a todo list item. <br>It calls the model method <span class="code">update</span> on the clicked todo to make it completed. <br>Once the todo is updated, the view methods <span class="code">updateElementCount</span>, <span class="code">clearCompletedButton</span> and <span class="code">elementCompleted</span> are run.</p>
                     </div>
-                    <div class="method">
+                    <div class="method" id="removeCompletedItems">
                         <h5>removeCompletedItems</h5>
                         <p>Triggered by clicking the "Clear completed" button. <br>It calls the model method <span class="code">remove</span> on all todos which are completed. <br>Once the value is updated, the view method <span class="code">removeItem</span> is run for each completed todo.</p>
                     </div>
-                    <div class="method">
+                    <div class="method" id="toggleAllC">
                         <h5>toggleAll</h5>
                         <p>Triggered when clicking the "toggle all" checkbox next to the text input. <br>It calls the model method <span class="code">update</span> on each todo to have the same completed state. <br>Once the value is updated, the view methods <span class="code">toggleAll</span>, <span class="code">clearCompletedButton</span> and <span class="code">elementCompleted</span> are run.</p>
                     </div>
                 </div>
-                <p>The complete flow of the application is illustrated below;</p>
-                <img src="./images/data-flow.png" alt="Data Flow of the MVC Architecture" class="img-fluid" />
+                <div id="todoAppFlow">
+                    <h3>Todo Application Flow</h3>
+                    <p>The complete flow of the application is illustrated below;</p>
+                    <img src="./images/data-flow.png" alt="Data Flow of the MVC Architecture" class="img-fluid" />
+                </div>
             </div>
             <div class="line"></div>
 
-            <div id="troubleshoot">
+            <div class="outer-section" id="usage">
+                <h1>Usage</h1>
+                <div class="inner-div" id="createTodo">
+                    <h3>Creating a todo</h3>
+                    <img src="./images/create-todo.gif" alt="Creating a todo gif" class="img-fluid" />
+                    <p>
+                        <ol>
+                            <li>Click on the text input.</li>
+                            <li>Type in the todo name.</li>
+                            <li>Press the enter key to save the todo.</li>
+                        </ol>
+                    </p>
+                    <div class="method">
+                        <h5>Model methods</h5>
+                        <p><a href="#create" class="code">create</a></p>
+                    </div>
+                    <div class="method">
+                        <h5>View methods</h5>
+                        <p><a href="#showEntries" class="code">showEntries</a>, <a href="#setFilter" class="code">setFilter</a>, <a href="#updateElementCount" class="code">updateElementCount</a>, <a href="#clearNewTodo" class="code">clearNewTodo</a></p>
+                    </div>
+                    <div class="method">
+                        <h5>Controller methods</h5>
+                        <p><a href="#addItem" class="code">addItem</a></p>
+                    </div>
+                </div>
+                <div class="inner-div" id="updateTodo">
+                    <h3>Updating a todo</h3>
+                    <img src="./images/update-todo.gif" alt="Updating a todo gif" class="img-fluid" />
+                    <p>
+                        <ol>
+                            <li>Double-click the todo list item.</li>
+                            <li>Type in your new todo name.</li>
+                            <li>Press the enter key to save the todo, <strong>OR</strong></li>
+                            <li>Click outside the input to cancel the change.</li>
+                        </ol>
+                    </p>
+                    <div class="method">
+                        <h5>Model methods</h5>
+                        <p><a href="#read" class="code">read</a>, <a href="#update" class="code">update</a>, <a href="#remove" class="code">remove</a></p>
+                    </div>
+                    <div class="method">
+                        <h5>View methods</h5>
+                        <p><a href="#editItemV" class="code">editItem</a>, <a href="#editItemDone" class="code">editItemDone</a>, <a href="updateElementCount" class="code">updateElementCount</a>, <a href="#clearCompletedButton" class="code">clearCompletedButton</a></p>
+                    </div>
+                    <div class="method">
+                        <h5>Controller methods</h5>
+                        <p><a href="#editItemC" class="code">editItem</a>, <a href="#editItemSave" class="code">editItemSave</a>, <a href="#editItemCancel" class="code">editItemCancel</a></p>
+                    </div>
+                </div>
+                <div class="inner-div" id="completeTodo">
+                    <h3>Completing a todo</h3>
+                    <img src="./images/complete-todo.gif" alt="Completinga todo gif" class="img-fluid" />
+                    <p>Click on the checkbox on the left of the list item.</p>
+                    <div class="method">
+                        <h5>Model methods</h5>
+                        <p><a href="#update" class="code">update</a></p>
+                    </div>
+                    <div class="method">
+                        <h5>View methods</h5>
+                        <p><a href="#elementCompleted" class="code">elementCompleted</a>, <a href="#updateElementCount" class="code">updateElementCount</a>, <a href="#clearCompletedButton" class="code">clearCompletedButton</a></p>
+                    </div>
+                    <div class="method">
+                        <h5>Controller methods</h5>
+                        <p><a href="#toggleComplete" class="code">toggleComplete</a></p>
+                    </div>
+                </div>
+                <div class="inner-div" id="removeTodo">
+                    <h3>Removing a todo</h3>
+                    <img src="./images/remove-todo.gif" alt="Removing a todo gif" class="img-fluid" />
+                    <p>Click on the cross icon on the right of the list item.</p>
+                    <div class="method">
+                        <h5>Model methods</h5>
+                        <p><a href="#remove" class="code">remove</a></p>
+                    </div>
+                    <div class="method">
+                        <h5>View methods</h5>
+                        <p><a href="#removeItemV" class="code">removeItem</a>, <a href="#updateElementCount" class="code">updateElementCount</a>, <a href="#clearCompletedButton" class="code">clearCompletedButton</a></p>
+                    </div>
+                    <div class="method">
+                        <h5>Controller methods</h5>
+                        <p><a href="#removeItemC" class="code">removeItem</a></p>
+                    </div>
+                </div>
+                <div class="inner-div" id="toggleAllTodo">
+                    <h3>Complete all todos</h3>
+                    <img src="./images/toggle-todo.gif" alt="Complete all todos gif" class="img-fluid" />
+                    <p>Click on the checkbox on the left of the text input to toggle all todos complete/active.</p>
+                    <div class="method">
+                        <h5>Model methods</h5>
+                        <p><a href="#read" class="code">read</a>, <a href="#update" class="code">update</a></p>
+                    </div>
+                    <div class="method">
+                        <h5>View methods</h5>
+                        <p><a href="#toggleAllV" class="code">toggleAll</a>, <a href="#clearCompletedButton" class="code">clearCompletedButton</a>, <a href="#elementCompleted" class="code">elementCompleted</a>, <a href="#updateElementCount" class="code">updateElementCount</a></p>
+                    </div>
+                    <div class="method">
+                        <h5>Controller methods</h5>
+                        <p><a href="#toggleAllC" class="code">toggleAll</a></p>
+                    </div>
+                </div>
+                <div class="inner-div" id="clearCompletedTodo">
+                    <h3>Clear Completed todos</h3>
+                    <img src="./images/clear-complete-todo.gif" alt="Clear completed todos gif" class="img-fluid" />
+                    <p>Click on the "Clear completed" button on the right of the footer to delete all completed todos.</p>
+                    <div class="method">
+                        <h5>Model methods</h5>
+                        <p><a href="#read" class="code">read</a>, <a href="#remove" class="code">remove</a></p>
+                    </div>
+                    <div class="method">
+                        <h5>View methods</h5>
+                        <p><a href="#removeItemV" class="code">removeItem</a>, <a href="#clearCompletedButton" class="code">clearCompletedButton</a>, <a href="#contentBlockVisibility" class="code">contentBlockVisibility</a>, <a href="#updateElementCount" class="code">updateElementCount</a></p>
+                    </div>
+                    <div class="method">
+                        <h5>Controller methods</h5>
+                        <p><a href="#removeItemC" class="code">removeItem</a></p>
+                    </div>
+                </div>
+                <div id="filterTodo">
+                    <h3>Filtering the todo list</h3>
+                    <img src="./images/filters.gif" alt="Filtering the todo list gif" class="img-fluid" />
+                    <p>
+                        <ul>
+                            <li>All: The first view displaying all todos.</li>
+                            <li>Active: The second view displaying all non-completed (active) todos only.</li>
+                            <li>Completed: The third view displaying all completed todos only.</li>
+                        </ul>
+                    </p>
+                    <div class="method">
+                        <h5>Model methods</h5>
+                        <p><a href="#read" class="code">read</a></p>
+                    </div>
+                    <div class="method">
+                        <h5>View methods</h5>
+                        <p><a href="#showEntries" class="code">showEntries</a></p>
+                    </div>
+                    <div class="method">
+                        <h5>Controller methods</h5>
+                        <p>N/A</p>
+                    </div>
+                </div>
+            </div>
+            <div class="line"></div>
+
+            <!-- <div class="outer-section" id="troubleshoot">
                 <h1>Troubleshooting</h1>
             </div>
-            <div class="line"></div>
-
+            <div class="line"></div> -->
 
         </div>
     </div>
