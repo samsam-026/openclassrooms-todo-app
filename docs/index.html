@@ -91,9 +91,9 @@
                         </li>
                     </ul>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="#troubleshoot">Troubleshooting</a>
-                </li>
+                </li> -->
             </ul>
         </nav>
 
@@ -229,35 +229,35 @@
 
                     <div class="method" id="addItem">
                         <h5>addItem</h5>
-                        <p>Triggered by the typing the enter key in the text input. <br>It calls the model method <span class="code">create</span> to create a new todo. <br>Once the todo is created, the view methods <span class="code">showEntries</span>, <span class="code">setFilter</span> and <span class="code">updateElementCount</span> are run.</p>
+                        <p>Triggered by the typing the enter key in the text input. <br>It calls the model method <a href="#create" class="code">create</a> to create a new todo. <br>Once the todo is created, the view methods <a href="#showEntries" class="code">showEntries</a>, <a href="#setFilter" class="code">setFilter</a> and <a href="#updateElementCount" class="code">updateElementCount</a> are run.</p>
                     </div>
                     <div class="method" id="editItemC">
                         <h5>editItem</h5>
-                        <p>Triggered when a todo pst item is clicked. <br>It calls the model method <span class="code">read</span> to find the current todo list item name. <br>The view method <span class="code">editItem</span> is run.</li>
+                        <p>Triggered when a todo pst item is clicked. <br>It calls the model method <a href="#read" class="code">read</a> to find the current todo list item name. <br>The view method <a href="#editItemV" class="code">editItem</a> is run.</li>
                     </div>
                     <div class="method" id="editItemSave">
                         <h5>editItemSave</h5>
-                        <p>Triggered when the enter key is typed in a text input in a todo list item. <br>It calls the model method <span class="code">update</span> to replace the new name of the todo. <br>If an empty string is passed, the model method <span class="code">remove</span> is called instead. <br>Once the value is updated, the view methods <span class="code">editItemDone</span>, <span class="code">updateElementCount</span> and <span class="code">clearCompletedButton</span> is run.</p>
+                        <p>Triggered when the enter key is typed in a text input in a todo list item. <br>It calls the model method <a href="#update" class="code">update</a> to replace the new name of the todo. <br>If an empty string is passed, the model method <a href="#remove" class="code">remove</a> is called instead. <br>Once the value is updated, the view methods <a href="#editItemDone" class="code">editItemDone</a>, <a href="#updateElementCount" class="code">updateElementCount</a> and <a href="#clearCompletedButton" class="code">clearCompletedButton</a> is run.</p>
                     </div>
                     <div class="method" id="editItemCancel">
                         <h5>editItemCancel</h5>
-                        <p>Triggered by clicking outside the text input in a todo list item after it is displayed. <br>It calls the model method <span class="code">read</span> to find the current todo list item name. <br>The view method <span class="code">editItemDone</span> is run.</p>
+                        <p>Triggered by clicking outside the text input in a todo list item after it is displayed. <br>It calls the model method <a href="#read" class="code">read</a> to find the current todo list item name. <br>The view method <a href="#editItemDone" class="code">editItemDone</a> is run.</p>
                     </div>
                     <div class="method" id="removeItemC">
                         <h5>removeItem</h5>
-                        <p>Triggered by clicking the cross icon on the right of a todo list item. <br>It calls the model method <span class="code">remove</span> on the clicked todo to delete it from the list. <br>Once it is deleted, the view methods <span class="code">updateElementCount</span> and <span class="code">removeItem</span> are run</p>
+                        <p>Triggered by clicking the cross icon on the right of a todo list item. <br>It calls the model method <a href="#remove" class="code">remove</a> on the clicked todo to delete it from the list. <br>Once it is deleted, the view methods <a href="#updateElementCount" class="code">updateElementCount</a> and <a href="#removeItemV" class="code">removeItem</a> are run</p>
                     </div>
                     <div class="method" id="toggleComplete">
                         <h5>toggleComplete</h5>
-                        <p>Triggered by clicking the checkbox on the left of a todo list item. <br>It calls the model method <span class="code">update</span> on the clicked todo to make it completed. <br>Once the todo is updated, the view methods <span class="code">updateElementCount</span>, <span class="code">clearCompletedButton</span> and <span class="code">elementCompleted</span> are run.</p>
+                        <p>Triggered by clicking the checkbox on the left of a todo list item. <br>It calls the model method <a href="#update" class="code">update</a> on the clicked todo to make it completed. <br>Once the todo is updated, the view methods <a href="#updateElementCount" class="code">updateElementCount</a>, <a href="#clearCompletedButton" class="code">clearCompletedButton</a> and <a href="#elementCompleted" class="code">elementCompleted</a> are run.</p>
                     </div>
                     <div class="method" id="removeCompletedItems">
                         <h5>removeCompletedItems</h5>
-                        <p>Triggered by clicking the "Clear completed" button. <br>It calls the model method <span class="code">remove</span> on all todos which are completed. <br>Once the value is updated, the view method <span class="code">removeItem</span> is run for each completed todo.</p>
+                        <p>Triggered by clicking the "Clear completed" button. <br>It calls the model method <a href="#remove" class="code">remove</a> on all todos which are completed. <br>Once the value is updated, the view method <a href="#removeItemV" class="code">removeItem</a> is run for each completed todo.</p>
                     </div>
                     <div class="method" id="toggleAllC">
                         <h5>toggleAll</h5>
-                        <p>Triggered when clicking the "toggle all" checkbox next to the text input. <br>It calls the model method <span class="code">update</span> on each todo to have the same completed state. <br>Once the value is updated, the view methods <span class="code">toggleAll</span>, <span class="code">clearCompletedButton</span> and <span class="code">elementCompleted</span> are run.</p>
+                        <p>Triggered when clicking the "toggle all" checkbox next to the text input. <br>It calls the model method <a href="#update" class="code">update</a> on each todo to have the same completed state. <br>Once the value is updated, the view methods <a href="#toggleAllV" class="code">toggleAll</a>, <a href="#clearCompletedButton" class="code">clearCompletedButton</a> and <a href="#elementCompleted" class="code">elementCompleted</a> are run.</p>
                     </div>
                 </div>
                 <div id="todoAppFlow">
@@ -439,6 +439,7 @@
                 $('.collapse.in').toggleClass('in');
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
             });
+
         });
     </script>
 </body>
