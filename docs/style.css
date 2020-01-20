@@ -172,6 +172,24 @@ div.method {
     padding-inline-start: 1.5em;
 }
 
+ul.parameters {
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+
+ul.parameters li {
+    font-size: 0.9em;
+    margin-bottom: 0.5em;
+}
+
+ul.parameters li strong {
+    color: #444;
+}
+
+ul.parameters li span.type {
+    color: #FF4B2B;
+}
+
 /* ---------------------------------------------------
     CODE
 ----------------------------------------------------- */
@@ -187,7 +205,7 @@ div.code code {
     color: #444;
 }
 
-span.code, #content a.code {
+p span.code, #content a.code, ul.parameters li span.code {
     background-color: #dedede;
     color: #444;
     padding: 0 5px;
@@ -206,6 +224,10 @@ span.code, #content a.code {
     background-color: #dedede;
     color: #444;
     text-decoration: none;
+}
+
+h5 span.code {
+    color: #5f5f5f;
 }
 
 /* ---------------------------------------------------
